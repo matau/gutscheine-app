@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gutscheine App — Organisiert & Griffbereit</title>
+    <style>
+        :root {
+            --apple-blue: #007AFF;
+            --apple-bg: #F5F5F7;
+            --apple-card: #FFFFFF;
+            --apple-text: #1D1D1F;
+            --apple-secondary: #86868B;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+            background: white;
+        }
+
+        h1 { font-size: 48px; font-weight: 700; letter-spacing: -1.2px; margin: 0; }
+        .tagline { font-size: 21px; color: var(--apple-secondary); margin-top: 10px; font-weight: 400; }
+
+        .content-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Bento-Style Cards */
+        .card {
+            background: var(--apple-card);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-full { grid-column: span 2; }
+
+        .problem-statement { font-size: 20px; color: var(--apple-secondary); line-height: 1.4; }
+        .solution-statement { font-size: 24px; font-weight: 600; margin-top: 15px; color: var(--apple-blue); }
+
+        /* Screenshot Slider */
+        .gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+        .gallery::-webkit-scrollbar { display: none; }
+        
+        .screenshot-wrapper { flex: 0 0 240px; transition: transform 0.3s ease; }
+        .screenshot-wrapper:hover { transform: translateY(-10px); }
+        .screenshot-wrapper img { width: 100%; border-radius: 22px; border: 1px solid #E5E5E5; }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--apple-blue);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+        }
+        .cta-button:hover { transform: scale(1.02); opacity: 0.9; }
+
+        .legal-box {
+            grid-column: span 2;
+            background: transparent;
+            border: 1px solid #E5E5E5;
+            text-align: left;
+            font-size: 14px;
+            color: var(--apple-secondary);
+        }
+
+        footer { text-align: center; padding: 40px; font-size: 14px; color: var(--apple-secondary); }
+        a { color: var(--apple-blue); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .card-full { grid-column: span 1; }
+            h1 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <img src="AppIcon.png" alt="Gutscheine App Icon" class="app-icon">
+    <h1>gutscheine</h1>
+    <p class="tagline">Immer griffbereit.</p>
+</section>
+
+<main class="content-grid">
+    <div class="card card-full">
+        <div class="problem-statement">
+            Papier-Gutscheine in der Schublade oder dicke Plastikkarten im Portemonnaie? Meistens liegen sie genau dann zu Hause, wenn man sie braucht – oder sie sind längst abgelaufen.
+        </div>
+        <div class="solution-statement">
+            Die gutscheine App ist deine digitale Sammelstelle. Scannen, speichern, bezahlen. Einfacher geht es nicht.
+        </div>
+    </div>
+
+    <div class="card card-full" style="padding: 20px 40px;">
+        <div class="gallery">
+            <div class="screenshot-wrapper"><img src="start.png" alt="Übersicht"></div>
+            <div class="screenshot-wrapper"><img src="detail.png" alt="Details"></div>
+            <div class="screenshot-wrapper"><img src="eingabe.png" alt="Hinzufügen"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Hilfe & Kontakt</h3>
+        <p>Haben Sie Fragen zur App? Ich bin für Sie da.</p>
+        <a href="mailto:bounsong@gmx.at" class="cta-button">Support Email</a>
+    </div>
+
+    <div class="card">
+        <h3>Datenschutz</h3>
+        <p>Ihre Daten gehören Ihnen. Die App speichert alles lokal auf Ihrem iPhone.</p>
+        <a href="privacy.html" class="privacy-link">Details ansehen →</a>
+    </div>
+
+    <div class="card legal-box">
+        <strong>Impressum gemäß § 5 ECG / § 25 Mediengesetz</strong><br><br>
+        Bounsong Phommahaxay<br>
+        Wien, Österreich<br>
+        Unternehmensgegenstand: App-Entwicklung
+    </div>
+</main>
+
+<footer>
+    &copy; 2026 Bounsong Phommahaxay
+</footer>
+
+</body>
+</html>
